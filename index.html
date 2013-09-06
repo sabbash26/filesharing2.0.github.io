@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Filesharing2.0.github.io : A File Sharing Service Based Upon BTSync" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Filesharing2.0.github.io</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/sabbash26/filesharing2.0.github.io">View on GitHub</a>
+
+          <h1 id="project_title">Filesharing2.0.github.io</h1>
+          <h2 id="project_tagline">A File Sharing Service Based Upon BTSync</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/sabbash26/filesharing2.0.github.io/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/sabbash26/filesharing2.0.github.io/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a name="welcome-to-my-file-sharing-project" class="anchor" href="#welcome-to-my-file-sharing-project"><span class="octicon octicon-link"></span></a>Welcome to My File Sharing Project.</h3>
+
+<p>This was a short venture into the world of P2P sharing, in which I created a simple solution for remote file sharing. By combining BitTorrent Sync with a remote server, one can store, share, version and archive files with ease. </p>
+
+<p><strong>Installing BTSync on an Ubuntu Server</strong></p>
+
+<p>Step 1: Install</p>
+
+<pre><code>cd /tmp
+mkdir btsync
+cd btsync
+wget http://btsync.s3-website-us-east-1.amazonaws.com/  btsync_x64.tar.gz .
+tar -xvzf btsync_x64.tar.gz
+</code></pre>
+
+<h2></h2>
+
+<p>Step 2: Setup Password Access
+In order to do so you must make a .config file in the btsync folder. Here is a sample of a btsync.config file.</p>
+
+<p>_{</p>
+
+<p>"device_name": "My Sync Device",
+  "listening_port" : 0,                       // 0 - randomize port</p>
+
+<p>/* storage_path dir contains auxilliary app files
+   if no storage_path field: .sync dir created in the directory 
+   where binary is located.
+   otherwise user-defined directory will be used 
+*/
+  "storage_path" : "/home/user/.sync",</p>
+
+<p>// uncomment next line if you want to set location of pid file
+// "pid_file" : "/var/run/syncapp/syncapp.pid",</p>
+
+<p>"check_for_updates" : true, 
+  "use_upnp" : true,                              // use UPnP for port mapping</p>
+
+<p>/* limits in kB/s
+   0 - no limit
+*/
+  "download_limit" : 0,<br>
+  "upload_limit" : 0, </p>
+
+<p>/* remove "listen" field to disable WebUI
+   remove "login" and "password" fields to disable credentials check
+*/
+  "webui" :
+  {
+    "listen" : "0.0.0.0:8888",
+    "login" : "admin",
+    "password" : "password"
+  }</p>
+
+<p>/* !!! if you set shared folders in config file WebUI will be DISABLED !!!
+   shared directories specified in config file
+   override the folders previously added from WebUI.
+<em>/
+/</em>
+  ,
+  "shared_folders" :
+  [
+    {
+//  use --generate-secret in command line to create new secret
+      "secret" : "MY_SECRET_1",                   // * required field
+      "dir" : "/home/user/bittorrent/sync_test", // * required field</p>
+
+<p>//  use relay server when direct connection fails
+      "use_relay_server" : true,
+      "use_tracker" : true, 
+      "use_dht" : false,
+      "search_lan" : true,
+//  enable sync trash to store files deleted on remote devices
+      "use_sync_trash" : true,
+//  specify hosts to attempt connection without additional search<br>
+      "known_hosts" :
+      [
+        "192.168.1.2:44444",
+        "myhost.com:6881"
+      ]
+    }
+  ]
+*/</p>
+
+<p>// Advanced preferences can be added to config file.
+// Info is available in BitTorrent Sync User Guide.</p>
+
+<p>}_</p>
+
+<p>In this file you simply have to change the "login" and "password."  It is currently set to its default which is admin and password. </p>
+
+<h2></h2>
+
+<p>Step 3: RUN
+youripaddress:8888/gui</p>
+
+<h2></h2>
+
+<p><strong>IMPORTANT FACETS OF BTSYNC</strong></p>
+
+<p>-Versioning-</p>
+
+<p>By default it creates and stores all the old copies of edited ﬁles for the period of 30 days (this period can be changed in General advanced preferences - sync_trash_ttl). All the versions are stored in the hidden .SyncArchive directory within your sync folder that you can open by right click on the sync folder and choosing ‘Open SyncArchive’.</p>
+
+<p>If you have any other question you can find the BTSync Users Guide online or contact me.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Filesharing2.0.github.io maintained by <a href="https://github.com/sabbash26">sabbash26</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
