@@ -31,14 +31,15 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-my-file-sharing-project" class="anchor" href="#welcome-to-my-file-sharing-project"><span class="octicon octicon-link"></span></a>Welcome to My File Sharing Project.</h3>
+        <h1>
+<a name="welcome-to-my-file-sharing-project" class="anchor" href="#welcome-to-my-file-sharing-project"><span class="octicon octicon-link"></span></a>Welcome to My File Sharing Project.</h1>
 
 <p>This was a short venture into the world of P2P sharing, in which I created a simple solution for remote file sharing. By combining BitTorrent Sync with a remote server, one can store, share, version and archive files with ease. </p>
 
-<p><strong>Installing BTSync on an Ubuntu Server</strong></p>
+<h3>
+<a name="installing-btsync-on-an-ubuntu-server" class="anchor" href="#installing-btsync-on-an-ubuntu-server"><span class="octicon octicon-link"></span></a>Installing BTSync on an Ubuntu Server</h3>
 
-<p>Step 1: Install</p>
+<p><strong>Step 1: Install</strong></p>
 
 <pre><code>cd /tmp
 mkdir btsync
@@ -49,7 +50,7 @@ tar -xvzf btsync_x64.tar.gz
 
 <h2></h2>
 
-<p>Step 2: Setup Password Access
+<p><strong>Step 2: Setup Password Access</strong>
 In order to do so you must make a .config file in the btsync folder. Here is a sample of a btsync.config file.</p>
 
 <p>_{</p>
@@ -125,20 +126,34 @@ In order to do so you must make a .config file in the btsync folder. Here is a s
 
 <h2></h2>
 
-<p>Step 3: RUN
-youripaddress:8888/gui</p>
+<p><strong>Step 3: RUN</strong></p>
 
-<p>When you access the IP Address it should look like this.</p>
+<p>youripaddress:8888/gui</p>
 
-<p><img src="https://www.facebook.com/photo.php?fbid=10201526535156065&amp;set=a.1557137779184.72836.1557425990&amp;type=1&amp;theater" alt="my face"></p>
+<p>When you access the IP address it should look like this.</p>
 
-<h2></h2>
+<p><img src="http://nickology.com/wordpress/wp-content/uploads/btsyncgui.png" alt="BT SYNC"></p>
+
+<p>After this using the software is quite simple. Firstly, you must download the software to your computer. 
+It looks something like this depending on what OS your running on. </p>
+
+<p><img src="http://www.soft32.com/blog/wp-content/uploads/2013/01/btsync.jpg.png" alt="User Interface"></p>
+
+<p>To share a folder you simply click Folders tab. Once you have done that you select which folder you would like to sync from your computer. Then the software will create a secret which you can share with another device. 
+For example, if you were to share the folder with the server you have just created you simply hit the add folder button and input the secret that was generated. Once this is done the software will begin to sync the folders between the devices. It should only take a maximum of 10 minutes. </p>
 
 <p><strong>IMPORTANT FACETS OF BTSYNC</strong></p>
 
 <p>-Versioning-</p>
 
 <p>By default it creates and stores all the old copies of edited ﬁles for the period of 30 days (this period can be changed in General advanced preferences - sync_trash_ttl). All the versions are stored in the hidden .SyncArchive directory within your sync folder that you can open by right click on the sync folder and choosing ‘Open SyncArchive’.</p>
+
+<p><strong>The Future</strong></p>
+
+<p>One can also combine BTSync with Owncloud to provide better organization of files. This way one doesn't have to go through the terminal to access files from the Server. </p>
+
+<p>Here is a link that shows you how to combine the two with a Raspberry Pi. You can simply treat the Raspberry Pi as a server and follow the same general steps. 
+<a href="http://blog.bittorrent.com/2013/05/23/how-i-created-my-own-personal-cloud-using-bittorrent-sync-owncloud-and-raspberry-pi/">CLICK HERE</a></p>
 
 <p>If you have any other question you can find the BTSync Users Guide online or contact me.</p>
       </section>
